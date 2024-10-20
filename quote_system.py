@@ -6,24 +6,39 @@ Quotees = ["Abdullah Ibrahim","Miriam Makeba", "Nelson Mandela", "Eleanor Roosev
 # TODO: Step 2 - Correct the functionality in the function below to successfully open file
 #                and to sucessfully handle the FileNotFoundError. 
 def read_file(file_name):
-    pass
+    try:
+        f = open("quotes.txt", "r") 
+        info = f.read()
+        print("Info in file:")
+        print(info)
+        f.close()
+    except FileNotFoundError:
+        print("Erro: File not found.")
+        
+
+
 
 
 # TODO: Step 1 - update the below function to correctly choose text file chosen from command line arguments. 
 #                Use `quotes.txt` for blank user input.
 def ask_file_name(user_input):
-    pass
+    if user_input.strip() == "":
+        return "quotes.txt"
+    else:
+        return user_input
 
 
 # TODO: Step 3 - randomly select quotee from `Quotees` list and return a random quotee. 
 def select_random_quotee(Quotees):
+    random_quotee = random.choice(Quotees)
     return random_quotee
+    
 
 # TODO: Step 4 - correct the functionality in the function below to 
 #                match quote from text file to chosen quotee. 
 #                "Quote/quotee does not exist." must be returned for quote that doesn't exist.
 def find_quote(random_quotee,quotes):
-    return quote
+    return 
 
 
 # TODO: Step 5 - Correctly print out the final results to pass the unitests.
